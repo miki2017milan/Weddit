@@ -9,12 +9,11 @@ function LeftSidebar() {
                     <img src="/news.png" /> News
                 </a>
                 <a href="#">
-                    <img src="/explore.png" /> Explore
+                    <img src="/friends.png" /> Friends
                 </a>
                 <a href="#">
                     <img src="/topics.png" /> Topics
                 </a>
-                <a href="#">See more</a>
             </div>
 
             <div className="communities">

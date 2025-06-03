@@ -1,4 +1,5 @@
 import PostUser from "./PostUser";
+import PostImage from "./PostImage";
 
 type Post = {
     title: string;
@@ -6,19 +7,11 @@ type Post = {
     user: { img: string; name: string };
 };
 
-function Feed() {
-    let posts: Post[] = [];
-    posts.push({
-        title: "First post",
-        img: "post1.png",
-        user: { img: "user1.png", name: "praise me" },
-    });
-    posts.push({
-        title: "Secound post",
-        img: "post2.png",
-        user: { img: "user2.png", name: "KarliCarlos" },
-    });
+type PostArray = {
+    posts: Post[];
+};
 
+function Feed({ posts }: PostArray) {
     return (
         <div className="feed">
             <ul>
@@ -28,8 +21,10 @@ function Feed() {
                             img={post.user.img}
                             name={post.user.name}
                         ></PostUser>
-                        <h1>{post.title}</h1>
-                        <img src={"/" + post.img} className="post-img" />
+                        <PostImage
+                            img={post.img}
+                            title={post.title}
+                        ></PostImage>
                     </li>
                 ))}
             </ul>
