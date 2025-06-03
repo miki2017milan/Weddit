@@ -7,19 +7,11 @@ type Post = {
     user: { img: string; name: string };
 };
 
-function Feed() {
-    let posts: Post[] = [];
-    posts.push({
-        title: "First post",
-        img: "post1.png",
-        user: { img: "user1.png", name: "praise me" },
-    });
-    posts.push({
-        title: "Secound post",
-        img: "post2.png",
-        user: { img: "user2.png", name: "KarliCarlos" },
-    });
+type PostArray = {
+    posts: Post[];
+};
 
+function Feed({ posts }: PostArray) {
     return (
         <div className="feed">
             <ul>

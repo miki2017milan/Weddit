@@ -1,14 +1,18 @@
 import "./App.css";
 
-import Container from "./components/Container.tsx";
-import Navbar from "./components/Navbar.tsx";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./pages/Layout";
+import Home from "./pages/Home";
 
 function App() {
     return (
-        <div className="main">
-            <Navbar />
-            <Container />
-        </div>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Layout />}>
+                    <Route index element={<Home />} />
+                </Route>
+            </Routes>
+        </BrowserRouter>
     );
 }
 
