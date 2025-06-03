@@ -1,4 +1,5 @@
 import PostUser from "./PostUser";
+import PostImage from "./PostImage";
 
 type Post = {
     title: string;
@@ -28,8 +29,10 @@ function Feed() {
                             img={post.user.img}
                             name={post.user.name}
                         ></PostUser>
-                        <h1>{post.title}</h1>
-                        <img src={"/" + post.img} className="post-img" />
+                        <PostImage
+                            img={post.img}
+                            title={post.title}
+                        ></PostImage>
                     </li>
                 ))}
             </ul>
